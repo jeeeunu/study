@@ -6,10 +6,9 @@ import styles from './App.module.css';
 function App() { // 함수형 컴포넌트
   return ( // 이 영역부터 jsx
     <div className="App">
-      <Hello />
-      <div className={styles.box}>
-        app
-      </div>
+      <Hello age={10} />
+      <Hello age={20} />
+      <Hello age={30} />
     </div>
   );
 }
