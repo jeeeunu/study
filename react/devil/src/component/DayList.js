@@ -1,21 +1,30 @@
-import { useEffect } from "react";
-import { useState } from "react";
+// import { useEffect } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 export default function DayList() {
-  const [days, setDays] = useState([]); // 빈배열로 만들고 api 에서 리스트로 가져와서 바꾸는 형식으로 함, 데이터가 바뀌면 자동으로 렌더링 될것임.
+  const days = useFetch('http://localhost:3001/days')
 
-  // api 통신
-  useEffect(() => {
-    fetch('http://localhost:3001/days')
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        setDays(data);
-      })
-    // 개발자도구 네트워크를 통해 api 호출된것 확인가능
-  }, []);
+  // 로딩글자 나타내기
+  if (days.length === 0) {
+    return <span>Loading...</span>
+  }
+
+
+  // const [days, setDays] = useState([]); // 빈배열로 만들고 api 에서 리스트로 가져와서 바꾸는 형식으로 함, 데이터가 바뀌면 자동으로 렌더링 될것임.
+
+  // // api 통신
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/days')
+  //     .then(res => {
+  //       return res.json()
+  //     })
+  //     .then(data => {
+  //       setDays(data);
+  //     })
+  //   // 개발자도구 네트워크를 통해 api 호출된것 확인가능
+  // }, []);
 
 
 

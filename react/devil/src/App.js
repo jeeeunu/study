@@ -4,6 +4,8 @@ import DayList from './component/DayList';
 import Day from './component/Day';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import EmptyPage from './component/EmptyPage';
+import CreateWord from './component/CreateWord';
+import CreateDay from './component/CreateDay';
 
 function App() { // 함수형 컴포넌트
   return ( // 이 영역부터 jsx
@@ -19,6 +21,12 @@ function App() { // 함수형 컴포넌트
             <Day />
           </Route>
           {/* emptyPage는 path를 적지 않음. 위에 아무것도 해당되지 않으면 알아서 작동됨, 제일 아래에 작성하면 됨. */}
+          <Route path="/create_word">
+            <CreateWord />
+          </Route>
+          <Route path="/create_day">
+            <CreateDay />
+          </Route>
           <Route>
             <EmptyPage />
           </Route>
