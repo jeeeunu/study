@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
+import useFetch from "../hooks/useFetch.ts";
 
 export default function CreateDay() {
   const days = useFetch("http://localhost:3001/days")
@@ -8,6 +8,7 @@ export default function CreateDay() {
   function addDay() {
     fetch(`http://localhost:3001/days/`, {
       method: 'POST', // 새로운 단어 생성
+      
       headers: {
         'Content-Type': 'application/json', // 'Content-Type' 을 뜻함 보내는 리소스의 타입
       },
