@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 컨텐츠 -->
+    <main>
+        <div class="wrap">
+            <h1>앱만들기</h1>
+
+            <!-- clock,username -->
+            <section class="section1">
+                <div class="clock_area">
+                    <h2 id="clock">00:00:00</h2>
+                </div>
+                <div class="userName_area">
+                    <form class="userName_form">
+                        <fieldset>
+                            <div>
+                                <label for="userName"></label>
+                                <input type="text" id="userName">
+                            </div>
+                            <button>확인</button>
+                        </fieldset>
+                    </form>
+                    <div class="userName_on hide">
+                        <p>안녕하세요 <span class="userName_cont">님!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- todo list -->
+            <section class="section2">
+                <h2>to do list</h2>
+                <form id="todo-form">
+                    <fieldset>
+                        <legend>todolist</legend>
+                        <div>
+                            <label for="todolist"></label>
+                            <input type="text" id="todolist">
+                        </div>
+                        <button class="btn_add">추가</button>
+                    </fieldset>
+                </form>
+                <ul id="todo-list">
+                </ul>
+            </section>
+
+            <section class="section3">
+                <h2>날씨</h2>
+                <div id="weather">
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <p class="copy">Copyright © by 유지은 All rights reserved.</p>
+    </footer>
+</body>
+<script src="section1.js"></script>
+<script src="todo.js"></script>
+<script src="weather.js"></script>
+</html>
