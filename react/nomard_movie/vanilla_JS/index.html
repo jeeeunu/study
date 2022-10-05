@@ -4,26 +4,35 @@
 <body>
   <div id="root"></div>
 </body>
+
 <!-- 엔진 역할 -->
 <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-<!-- element 를 html에 두는 역할 -->
+<!-- 인터렉션 + element 를 html에 두는 역할 -->
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<!-- 바벨 적용시키기 -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel"></script>
 <script>
   const root = document.getElementById("root");
-  const h1 = React.createElement(
-    "h1", {
-      id: "title",
-      onMouseEnter: () => console.log('mouse enter')
-    },
-    "Hello I'm a h1"); // 타입, id값, 내용
-  const btn = React.createElement("button", {
-    onClick: () => console.log('im clicked'),
-    style: {
-      backgroundColor: "tomato",
-    }
-  }, "Click me");
-  const container = React.createElement("div", null, [h1, btn]);
-  ReactDOM.render(container, root);
+ 
+  function App() {
+    // useState 기본 배열값:  [0(초기값),f(그값을 바꾸는 함수)] , f는 그떄그때 리렌더링을 위해 필요한 함수
+    let [counter,setCounter] = React.useState(0); // [0,f] -> [counter,setCounter]로 저장
+    const onClick = () =>{
+      // setCounter(counter + 1); // setCounter은 리렌더링하는 함수라고 볼 수 있음 (직접 리렌더링 할 필요 X)
+      setCounter(current => current + 1);
+    };
+
+    return(
+    <div>
+      <h3>Total clicks: {data[0]}</h3>
+      <button onClick={onClick}>Click me</button>
+    </div>
+    );
+  };
+
+  ReactDOM.render(<App/>,root);
+
 </script>
 
 </html>
